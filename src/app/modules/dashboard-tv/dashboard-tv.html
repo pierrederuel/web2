@@ -1,0 +1,209 @@
+<!--<table ng-table="tableCommerciauxCourants" class="table table-condensed table-bordered table-striped">-->
+<div class="row" data-sn-grid-demo>
+  <div class="col-md-12 widget-container" data-ui-jq="sortable" data-ui-options="{
+            connectWith: '.widget-container',
+            handle: 'header, .handle',
+            cursor: 'move',
+            iframeFix: false,
+            items: '.widget:not(.locked)',
+            opacity: 0.8,
+            helper: 'original',
+            revert: true,
+            forceHelperSize: true,
+            placeholder: 'widget widget-placeholder',
+            forcePlaceholderSize: true,
+            tolerance: 'pointer'
+        }">
+
+    <section class="widget">
+      <header>
+        <div class="widget-controls">
+          <a data-widgster="fullscreen" title="Plein écran" href="#"><i class="glyphicon glyphicon-fullscreen"></i></a>
+          <a data-widgster="restore" title="Quitter le plein écran" href="#"><i class="glyphicon glyphicon-resize-small"></i></a>
+        </div>
+      </header>  
+      <div class="widget-body clearfix">
+
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
+        <section class="widget">         
+          <div class="widget-body clearfix">
+
+              <div>
+                <h4>Classement des <span class="fw-semi-bold">{{data.employeMoisPrecedent}}</span> N-1</h4>
+                <table class="table" ng-table="tableEmployePrecedents">
+                  <thead>
+                  <tr>
+                      <th class="hidden-xs">#</th>
+                      <th>Photo</th>
+                      <th class="hidden-xs">Nom</th>
+                      <th>CA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="person in $data | orderBy:id:reverse">
+                      <td class="hidden-xs"><span class="fw-semi-bold">{{$index + 1}}</span></td>
+                      <td>
+                        <img class="img-rounded" src="{{person.photo}}" alt="" height="50">
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="fw-semi-bold">{{person.prenom}} {{person.nom}}</span>
+                      </td>
+                      <td>
+                        <span class="fw-semi-bold">{{person.montantVendu | currency:"€":0}}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>                
+              </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+    <section class="widget bg-primary text-white" style="background-image: linear-gradient(212deg, #005bbb, rgba(0, 26, 112, 0.75))">
+      <div class="widget-body clearfix">
+        <div class="live-tile" data-mode="carousel" data-speed="300" data-delay="3000" data-height="313">
+          
+          <div>
+            <p class="h2 mt-xs">
+              <i class="fa fa-quote-left opacity-50"></i>
+              CA du mois en cours
+              <i class="fa fa-quote-right opacity-50"></i>
+            </p>
+            <div align="center" style="padding-top:35px;">
+              <img src="./assets/images/logo/logo-enelia.png"/ class="img-rounded" height="180">
+            </div>
+            <div class="widget-footer-bottom">
+              <h1 class="no-margin mb-xs"><span class="fw-semi-bold">{{data.caEnCours | currency:"€":0}}</span></h1>
+            </div>
+          </div>
+
+          <div>
+            <div class="clearfix mt-xs">
+                            <span class="thumb pull-left mr">
+                                <img class="img-circle" src="./assets/images/coupe.png" alt="...">
+                            </span>
+              <h4 class="no-margin mb-xs"><span class="fw-semi-bold">{{data.meilleurCommercial.prenom}}</span> {{data.meilleurCommercial.nom}}</h4>
+              <p class="h3 text-light">{{data.meilleurCommercial.montantVendu | currency:"€":0}}</p>
+            </div>
+            <div align="center">
+              <img src="{{data.meilleurCommercial.photo}}" class="img-rounded" height="200"/>
+            </div>
+            <div class="widget-footer-bottom">
+              <p class="h3">
+                <i class="fa fa-quote-left opacity-50"></i>
+                Meilleur commercial N-1
+                <i class="fa fa-quote-right opacity-50"></i>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p class="h2 mt-xs">
+              <i class="fa fa-quote-left opacity-50"></i>
+              CA du mois précédent
+              <i class="fa fa-quote-right opacity-50"></i>
+            </p>
+            <div align="center" style="padding-top:35px;">
+              <img src="./assets/images/logo/logo-enelia.png" class="img-rounded" height="180" />
+            </div>
+            <div class="widget-footer-bottom">
+              <h1 class="no-margin mb-xs"><span class="fw-semi-bold">{{data.caPrecedent | currency:"€":0}}</span></h1>
+            </div>
+          </div>          
+
+          <div>
+            <div class="clearfix mt-xs">
+              <span class="thumb pull-left mr">
+                  <img class="img-circle" src="./assets/images/coupe.png" alt="...">
+              </span>
+              <h4 class="no-margin mb-xs"><span class="fw-semi-bold">{{data.meilleurProspecteur.prenom}}</span> {{data.meilleurProspecteur.nom}}</h4>
+              <p class="h3 text-light">{{data.meilleurProspecteur.montantVendu | currency:"€":0}}</p>
+            </div>
+            <div align="center">
+              <img src="{{data.meilleurProspecteur.photo}}" class="img-rounded" height="200" />
+            </div>
+            <div class="widget-footer-bottom">
+              <p class="h3">
+                <i class="fa fa-quote-left opacity-50"></i>
+                Meilleur prospecteur N-1
+                <i class="fa fa-quote-right opacity-50"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+
+  </div>
+
+
+<div class="col-md-8">
+    <div class="row">
+		<section class="widget">
+		  <div class="widget-body">
+		    <div class="row">
+		      <div class="col-md-12" >      
+		          <div class="widget-body clearfix">
+		          	<div>
+		                <header>
+		                  <h4>Classement des <span class="fw-semi-bold">{{data.employeMoisCourant}}</span> </h4>
+		                </header>
+		                <table class="table" ng-table="tableEmployesCourants">
+		                  <thead>
+		                  <tr>
+		                      <th class="hidden-xs">#</th>
+		                      <th>Photo</th>
+		                      <th class="hidden-xs">Nom</th>
+		                      <th class="hidden-xs">Objectif</th>
+		                      <th>CA</th>
+		                      <th class="hidden-xs">Statut</th>
+		                    </tr>
+		                  </thead>
+		                  <tbody>
+		                    <tr data-ng-repeat="person in $data | orderBy:id:reverse">
+		                      <td class="hidden-xs"><span class="fw-semi-bold">{{person.index}}</span></td>
+		                      <td>
+		                        <img class="img-rounded" src="{{person.photo}}" alt="" height="50">
+		                      </td>
+		                      <td class="hidden-xs">
+		                        <span class="fw-semi-bold">{{person.prenom}} {{person.nom}}</span>
+		                      </td>
+		                      <td class="hidden-xs">
+		                        <span class="fw-semi-bold">{{person.objectif | currency:"€":0}}</span>
+		                      </td>
+		                      <td>
+		                        <span class="fw-semi-bold">{{person.montantVendu | currency:"€":0}}</span>
+		                      </td>		                      
+			                  <td class="width-150">
+			                    <div class="progress progress-sm mt-xs">
+			                      <div class="progress-bar progress-bar-success" style="width: {{person.montantVendu / person.objectif * 100}}%;">{{person.montantVendu / person.objectif * 100 | number : 2}}%</div>
+			                    </div>
+			                  </td>		                      
+		                    </tr>
+		                  </tbody>
+		                </table>
+		              </div>
+		          </div>		     
+		      </div>
+		  </div>
+		</section>
+    </div>
+  </div>
+
+
+</div>
+</section>
+
+
+  </div>
+</div>
+
+

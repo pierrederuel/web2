@@ -1,0 +1,39 @@
+<div class="container">
+  <main id="content" class="widget-login-container" role="main">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-10 col-lg-offset-4 col-sm-offset-3 col-xs-offset-1">
+        <h4 class="widget-login-logo animated fadeInUp">
+          <i class="fa fa-circle bleu-edf"></i>
+          Tableau de bord
+          <i class="fa fa-circle orange-edf"></i>
+        </h4>
+        <section class="widget widget-login animated fadeInUp">
+          <header>
+            <div align="center">
+              <img src="./assets/images/logo/logo-enelia.png" class="img-rounded" height="180"/>
+            </div>
+          </header>
+          <div class="widget-body">
+            <form class="login-form mt-lg">
+              <div class="form-group">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nom d'utilisateur" ng-model="user.username">
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="pswd" type="password" placeholder="Mot de passe" ng-model="user.password">
+              </div>
+              <div class="clearfix">
+                <div class="btn-toolbar pull-right">
+                  <!--<a class="btn btn-inverse btn-sm" data-ui-sref="app.dashboard-tv">Se connecter</a>-->
+                  <a class="btn btn-inverse btn-sm" data-ng-click="login()">Se connecter</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer">
+    2017 &copy; Enelia.
+  </footer>
+</div>
