@@ -3,17 +3,17 @@
   "name": "Tableau de bord - Enelia",
   "icons": [
     {
-      "src": "/assets/logo/logo48.png",
+      "src": "/assets/logos/logo48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "/assets/logo/logo96.png",
+      "src": "/assets/logos/logo96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "/assets/logo/logo192.png",
+      "src": "/assets/logos/logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
